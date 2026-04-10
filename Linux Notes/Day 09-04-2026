@@ -1,0 +1,27 @@
+Date: 09-04-2026
+Agenda for today
+Push Local repo to Remote Repo
+
+Working directory
+Staging area
+Local repo
+Remote repo
+
+"remote" means nothing but alias for Github repo. we can write "tiger" instead of remote also.
+
+git push --set-upstream origin main
+
+An upstream branch is like a link between your local branch(changes after commit command)(in this case, main) and the corresponding branch on the remote repo(Github). Git needs this link to know where to push your changes.
+
+When you first push a branch, git doesnt automatically know which remote branch it should push to. The --set-upstream flag tells git to create this link: it sets origin/main as the upstream for your local main branch.
+
+After running git push --set-upstream origin main, future pushes can just be git push and git will know to push to origin/main.
+
+
+I actually faced a problem while running "git push --set-upstream origin main". The problem is my terminal is still using the old credentials of mohangit2 user account.
+So, after deleting the cached credentials. Things started working.
+Command to delete the credentials is cmdkey /delete:git:https://github.com
+
+To know the user name of the account that is logged in: git config --global user.name
+To know the email ID of the account that is logged in: git config --global user.email
+

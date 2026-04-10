@@ -1,0 +1,56 @@
+Networking Session
+Hub
+Switch
+Router
+There are the 3 external devices which can be used to establish connections between multiple Network interfaces
+
+Physical - MAC Address
+Registration number is unique throughout India - MAC Address. MAC Address is assigned for Network Interface which is unique.
+Door No is like IP Address.
+
+Network Interface A - This will have MAC Address which is a unique identifier, IP Address
+Network Interface B - This will have MAC Address which is a unique identifier, IP Address
+Network Interface C - This will have MAC Address which is a unique identifier, IP Address
+
+Hub: Not an intelligent device. So, all the information will be broadcasted to all the devices in the hub.
+Since it is sending all devices, there is a security concern and unnecessary traffic if we wanted to send from Device A to Device B instead of Device C
+Switch: It is an intelligent device. Switch is used for internal communication. 
+
+Router: This is used for External communication. For connecting external network.
+
+Device between Teo network is Router. Then, Connection between VNets is VNET Peering ?
+
+Every subnet will reserve 5 IPs - Network, AZure Gateway for internet connectivity, DNS, AZure Internal, Reserved.
+Out of 256, only 251 are usable.
+
+Resource group --> Creata VNET(Also called network) --> Subnets --> Virtual machines
+
+For subnets, range will be from /29 to /16. If we wanted to create bigger network than /16, it is recommended to create multiple Smaller VNets and make Vnet peering connection between these two VNets.
+IP Address - Shop address
+Port - Shop number
+
+Linux SSH - Port 22
+Windows RDP - Port 3389
+
+To connect to a Virtual machine in Windows Laptop
+In Windows Laptop, Open Command prompt
+ssh username@IPAddress
+password
+
+4 octets each 8 bits which means 0-255
+For addresses, we are going to change only last 2 octets
+Max we can use till /8 from /32
+
+
+
+
+Action items:
+Create a VNET using a use case of Bank - Loans, HR, Cards, Accounts
+Create a VM in Loans Subnet
+
+Doubts:
+How many bits ?8.8.8.8=32. How is the formula araised ?
+What is vnet peering?
+
+
+Next day's topic:

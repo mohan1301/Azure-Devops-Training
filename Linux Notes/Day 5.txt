@@ -1,0 +1,87 @@
+Virtual networking
+VNET
+CIDR
+Subnets
+Virtual machine
+
+Todays topic:
+NSG --> Network Security Group
+ASG --> Application Security Group
+Priorities --> Priority
+
+NSG acts like a Firewall.
+NSG acts like a Security Guard and he works based on few rules.
+
+Set of rules that can be set at NSG are called NSG Rules
+
+Ports
+SSH --> 22(This is a managed port)
+FTP --> 20/21
+DNS --> 53
+HTTP -> 80
+HTTPS > 443
+RDP --> 3389
+SQL --> 1433
+MySQL > 3306
+PostgresQL -> 5432
+Java --> 8080
+
+NSG Can be created separately and can be applied either at Subnet level or VM Level
+
+
+Standard_B1s - 1 vCPU, 1 GB Memory
+
+
+Access a web application
+
+apt update - To update existing
+apt install apache2 -y
+cd /var/www/html
+vi note.html --> Apache installation gave this default html page
+
+systemctl restart apache2 --> To restart the machine
+
+Web Server
+App Server
+Database Server
+
+If the Public IP Address is not open, we cannot connect to that server directly.
+In that case, we need to connect to VPN - Virtual Private Network.
+Once we connect our laptop to that VPN, we have enterted that Network where Private IP address's VM
+65000 Port - AllowVnetInBound is already placed in NSG. That is the reason we can connect from one vm to another from the same subnet.
+That is the reason once we have connected to the VPN, we can connect to Second VM which is having private IP
+
+
+Subnet - 2 Vms are created - 1 Web VM(having Public IP), 1 App VM(having Private IP)
+We connected to VPN and then connected to Web VM. From here, we connected to App VM.
+Till now, we are having NSG at VM Level(Which means Network interface). We can create a new NSG Layer separately.
+
+VM Level << NSG << Subnet
+Now, lets write NSG Level rules.
+We can assign this NSG at a specific subnet. So that, subnet will get rules of that NSG.
+
+We can restrict access to Database VM by using Priority
+Priority 100 >> Priority 3000
+
+What has been done till now in this today's session
+Created a VNET.
+Created Web Subnet - Created 2 Vms(Web Server and App Server) and played with port numbers and understood about One VM connecting to another
+Created DB Subnet - Created a Database VM
+
+All the port numbers and Priorities are played in Inbound security rules
+
+Also, 
+We tried to deny the access from Web server to Database server and allow the access from App Server to Database Server
+
+Extension used for going through all the diagrams discussed in the class
+tldraw
+
+Doubts:
+How are we able to connect to machines without Jump server/Bastian ? ssh definition is this
+Can we attach 2 NSGs for a Virtual machine ?
+How to Allow specific VM using Priority ---> Can give the IP Address of the Source in Inbound Port Rule
+Hosting web Application, App Application, Database application in the same server mean --> they are hosted in different ports. correct ? Yes
+
+Actions items:
+How to connect to Linux
+How to jump from one machine to another

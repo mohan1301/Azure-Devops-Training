@@ -1,0 +1,79 @@
+Public key will be with the server
+Private key will be securely stored with the user
+
+Agenda:
+Use case 1: Create a pair of Public & Private Keys, Two machines. Ensure you are connecting to these virtual machines using the private key.
+Use case 2: Place the private key in one of the VM and connect to the other VM.
+
+We can generate keys on our own. Both Public and Private keys will be created.
+We can use the same set of Keys throughout all the machines.
+
+Winscp is a tool that securely transfers files from Windows machine to Linux machine
+
+To generate keys: ssh-keygen -t rsa -b 4096 -f linux
+Two files will be created. linuxuser(Private), linuxuser.pub(Public)
+
+To store keys securely,
+
+mkdir -p ~/.ssh-keygen -> This will by default provide all accesses to all users, groups
+chmod 700 ~/.ssh -> To have access to only linuxuser
+
+cd .ssh/
+touch authorized_keys (File where we store our public key)
+vi authorized_keys(Paste the public key)
+
+To connect to Another VM using our private keys
+ssh -i .\linuxuser.pem linuxuser@IP_Address
+
+To add a user to sudo: usermod -aG sudo linuxuser
+To check the permissions of a user: id linuxuser
+
+Overall understanding of the above discussion is:
+If the server is already having a Public key, we can connect to the machine using private key
+
+
+
+Cron & CronTab
+Cron - Task scheduler
+Cron is a service. This service will run every minute.
+This Cron is also called Daemon.
+
+Crontab is a file where our jobs are written which needs to be executed
+
+*__*__*__*__*__
+* - Minutes from 1 to 59
+Ex: For every 5 min, if any script needs to be run. Then 5****
+Ex: For every min, if any script needs to be run. Then *****
+
+Ex: For every 1 hour, if any script needs to be run. Then 5****
+
+* - Hours from 0-23
+
+* - Days from 1-31
+Ex: a day in every month, 10:30 AM a script needs to run -> 30 10 1 * *
+* - Month from 1-12
+Ex: To run in specific month -> 30 10 31 3 *
+* - Day of the week(0-6) 
+Ex: Every monday, 10:30 am... Cron job needs to run -> 30 10 * * 1
+
+For example, 30 18 1 * *
+
+Crontabguru - A website to get the answer of Cron time
+
+vi timetrack.sh -> to Execute a script
+#!/bin/bash
+# this script logs the current date and time to output.txt
+echo "The time is: $(date)" >> /home/linuxuser/output.txt
+
+
+Command to change the Crontab which is the file
+crontab -e
+* * * * * /home/linuxuser/timetrack.sh -> To run every minute
+CTRL + O -> To save
+CTRL + X -> To exit
+
+
+crontab -l -> This will list out all the scripts which are setup
+
+To check if crontab is running or not: systemctl status cron
+

@@ -1,0 +1,76 @@
+uptime gives time, users count, load average: 0.07(1 min), 0.03(5 mins average), 0.01
+top command gives granualer details
+All the data of uptime command and also mentioned below statistics
+%CPU
+MiB Memory: 
+MiB Swap: While retriving data, first the data comes from HDD and stores in RAM. Later, CPU will fetch the data from RAM to CPU.
+RAM is called the first memory of the system.
+If the RAM is full, RAM will reserve a temporary memory called Swap memory. This will be fetched and used in case needed.
+Commands :-
+uptime
+top
+htop - Even more granualer with sorting features in the command line
+
+
+Binaries & Librsries - What are these ?
+Whst is thr diff ?
+Once combined and framed in an executable format is called Binary.
+Pre written reusable code
+/ - Root partition
+/boot - Files to start the machine
+/bin --> Binaries
+/sbin
+/home - /bob, /alice -> User's folders
+/lib
+/media
+/mnt
+/usr - /local, /bin
+/etc - Configurations
+/var - Logs are stored in this folder
+/proc - Processors data
+/tmp - After Reboot, data will be viped off
+/opt - Third party installations
+
+
+ls -l ==> -l means long listing
+
+lrwxrwxrwx => Here, "l" means link. Actual file location is somewhere else
+
+Links means Shortcuts
+Types of Links -> Sim links, Hard links
+
+Sim link means having a linked file from Original file. If any changes made to linked file, original file will get reflected. 
+If original file is deleted, no use of having the linked file as original file itself is deleted.
+ln -s source_file path.txt linked_file path.txt => ln means link, s means Sim Link
+To remove sim link -> rm si linked_file path.txt
+
+Hard Link -> When we create a link from Original file to Linkedfile, even though you delete the original file, linkedfile file works as it should. As they both are independent.
+Reason: when we create a file in Linux, it creates a inode value for storing all the data. So, even though you change in one file, it is reflecting in inode. inode is nothing but Metadata.
+inode means Index node. inode contains metadata.
+metadata includes file type, permission, owner, group id, file size, time stamps, no of links
+
+To make Hard link, we dont need to give -s as we give for Sim link. Directly, give the ln hardlink.txt hardlinkshortcutfile.txt
+To know the inode values of the files, ls -li => long listing inode values
+
+We can use the same Sim link and Hard link concepts for folders as well.
+
+cp command to copy the files content into another file
+For directories, we need to use -r which is recursive mode
+
+mv command to move the files to another location
+
+
+
+Today Discussed about
+Top
+linux file system
+Sim link
+Hard link
+cp
+mv
+renaming files
+
+
+Tmrw:
+users, groups, group management
+File permissions

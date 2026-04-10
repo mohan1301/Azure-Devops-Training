@@ -1,0 +1,38 @@
+Developer will push code to Git
+We will build proper 3 tier application and then we will work on DevOps concepts to publish
+
+Azure Hierarchy
+Tenant - Workspace which is created by Azure for us to deploy resources
+	Management Groups - 
+		Subscriptions
+			Resource Groups
+				Resources
+
+Entra ID is same as Azure Active Directory
+
+A mgmt grp can have multiple mgmt grps, multiple subscriptions
+Mgmt grp is created to place any policies on that mgmt grp level
+				
+Subscription is a billing boundary.
+All billing related boundaries will be applied at Subscription level
+
+In Azure, we can place policies at any level
+
+In a VM(Consider this as a Mall), multiple applications will run on different Ports just like having multiple shops in a Mall. 
+Shop number is equivalent to Port.
+RDP Client's full form is Remote Desktop Connection Client
+RDP is an application used to connect to Virtual machines.  
+
+
+
+Doubts
+How come resources can be in different location if the resource group is in one location ?
+
+Action item:
+Create Azure account
+Create Virtual machine and access the machine
+Install RDP and connect to the machine
+
+
+Next day's topic:
+Networking Session - Azure virtual networks

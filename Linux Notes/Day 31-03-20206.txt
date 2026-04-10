@@ -1,0 +1,57 @@
+Two methods to change the permissions for a file
+Absolute method
+Symbolic method
+
+-rw- r-- r--   1 root root 19 Mar 30 12:34 demo.txt
+root user will have rw permissions on that file
+root group will have r permissions on that file
+
+Today, we will look after how to change the ownership of a File
+Change the ownership to Bharath from root
+chown bharath installapache.sh --> Changing the ownership of user of installapache.sh file from root to bharath
+chown :dev installapache.sh --> Changing the ownership of group of installapache.sh file from root to dev
+
+If we want to change the ownership of files even after the changing the ownership at folder level, use -R RECURSIVE method
+
+Package manager - This is something like Play store in Android
+This manager will only have metadata of all the Apps
+In the same way, OS also will have such features to install like apache or nginx or tree or docker or K8s
+Package manager for 
+1. Ubuntu: APT --> Advanced Package Tool
+2. Redhat: YUM --> Yellow dog Updater and Modifier
+
+For any New Releases or New features or New Enhancements, Bug fixes... we will get updates
+
+1.7 --> 2.0 ==> Major version change, so we called upgrade
+1.7 --> 1.8 ==> Minor version change, so we called update
+
+For Redhat, we have .rpm packages
+For Ubuntu, we have .deb packages
+
+
+Package Manager --> Repository ---> Meta data --> Packages and Dependencies
+Package Manager will fetch the details of the application from the Repository. This Repository fetch the Meta data and installs the Packages and Dependencies
+
+pip install apache2
+
+systemctl start apache2
+systemctl stop apache2
+
+systemctl enable apache2 -> This command will initiate the services after restart
+apache2 -v -> Version of apache2
+
+apt list -a apache2 -> what all versions of apache are installed
+apt install apache2 --only-upgrade -y -> To upgrade
+
+We can hold a version by using this command -> apt-mark hold apache2
+We can unhold a version by using this command -> apt-mark unhold apache2
+
+When we uninstall, our config files will not be removed.
+apt remove apache2 -> this will just remove the app. Config will stay.
+apt purge apache2 -y -> this will remove the app and config as well.
+apt autoremove -y -> Ununsed dependencies will be removed
+
+
+Doubts:
+How to see what all services are on hold in Linux ? Try with apt-mark help
+Where to see the config files in Linux even after remove ? /var, /etc

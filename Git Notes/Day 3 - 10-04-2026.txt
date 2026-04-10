@@ -1,0 +1,52 @@
+git reset --soft HEAD --> This will move the HEAD commit to staging and HEAD will move to previous commit
+Local repo to Staging location
+
+
+git reset --> This will move the commits to working directory
+
+git reset --soft 7e1dc45 --> to directly go to specific commit
+
+git reset HEAD^^ --> For bringing commits directly from Local repo to working directory(Here, we have eliminated --soft)
+
+git reset --hard HEAD^^ -> Two commits will be removed and changes will be discarded. Indirectly, this mean commits will be deleted and HEAD moves back 2 positions.
+hard will always be written in small letters.
+HEAD will always be written in Capital letters.
+
+git reset --hard 7e1fe09 --> All the changes made after 7e1fe09 are discarded.
+
+git log --oneline --> To print the commit IDs and HEAD position
+
+git rm f3.txt --> To delete a specific file from the commit
+
+git rm --cached f4.txt --> Instead of deleting, if you want to move the file to cache. This command will move the file from local to working directory
+
+git log --oneline --graph --all -> This will give an output of a tree graph
+
+git merge sales --> This works from main branch. Once executed, sales branch will be merged to main branch
+
+git remote add origin httsp://github.com/mohan1301/Day3.git
+
+git push origin -u sales --> This will create the sales branch in remote directory and push the changes to remote repo and main branch. 
+-u means setting the branch to accept the push command simply. Going forward, git push will think like "git push origin -u sales"
+
+git push --all origin -> this will create all the branches which are in local into remote directory
+
+git push origin HR -> this will push all the changes in specific HR local branch to remote branch
+
+git branch -vv -> This will show all the branches including remote directory
+
+git branch -> This will show all the branches in local
+
+git switch sales --> Switch the branch to sales
+
+mixed flag is something like 
+--soft -> Will go one commit back to staging
+--hard -> Will go one commit back to staging and discard the changes
+--mixed ->Will go one commit back directly to working directly from local to working directory.
+
+if two files are added individually and want to remove one file back to working, use unstaging concept
+
+
+
+So, git reset HEAD & git reset HEAD^
+Are both same ???

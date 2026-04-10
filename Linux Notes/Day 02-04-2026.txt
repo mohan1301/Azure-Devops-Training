@@ -1,0 +1,87 @@
+RG
+VNET
+Subnet
+WEbVM
+DBVM
+Private IP
+Public IP
+NSG
+Storage account
+
+Allow port 80
+Allow port 22
+
+
+Azure disk and page blobs are same in azure
+apt update
+apt install apache2 -y
+systemctl enable apache2
+systemctl status apache2
+apt install tree
+cd /var/www/html
+tree -> To check tree structure
+
+#######################################
+What has been done till now
+WEbVM Server is created with Public IP
+Static page is hosted
+apache2 is installed to host webpage
+Folder will be created with html
+default one is index.html
+for styling - added css
+added images
+#######################################
+DBVM will be created
+Nat gateway is used to allow outbound traffic to Internet
+So, once we create a NAT Gateway and assign the VM to it. When we connect to the Internet. Our Private IP will not be exposed, NAT GAteway IP will be exposed preventing from exposing the VM IP.
+
+vi /etc/mysql.mysql.conf.d/mysql.cnf
+make bind address to 0.0.0.0
+0.0.0.0 -> This means allow all traffic
+
+systemctl restart mysql
+systemctl status mysql
+
+To start mysql -> mysql
+
+mysql> CREATE DATABASE blinkit;
+mysql> USE blinkit
+mysql> CREATE TABLE vegetables (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    price DECIMAL(10,2),
+    description TEXT,
+    image VARCHAR(255)
+);
+mysql> CREATE USER 'blinkituser'@'%' IDENTIFIED BY 'StrongPassword123';
+mysql> GRANT ALL PRIVILEGES ON blinkit.* TO 'blinkituser'@'%';
+mysql> FLUSH PRIVILEGES;
+mysql> EXIT
+
+
+Install PHP, apache2 in WEbVM
+apache2 should communicate to PHP
+sudo apt install php libapache2-mod-php php-mysql -y
+libapache2-mod-php - library needed to communicate Apache to PHP
+php-mysql - Communicate PHP to mysql
+
+Details that needs to be hardcoded in WebVM in order to connect to DBVM
+cd /var/www/html
+vi db.php
+
+Paste the below text
+<?php
+$host = "10.0.1.6";
+$user = "blinkituser";
+$pass = "StrongPassword123";
+$db   = "blinkit";
+ 
+$conn = new mysqli($host, $user, $pass, $db);
+ 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+For having dynamic pages, we have installed PHP
+For having static pages, we have installed apache2

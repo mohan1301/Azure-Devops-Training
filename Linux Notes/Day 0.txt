@@ -1,0 +1,41 @@
+Developer will develop the code and place that in Git Repo.
+Once a new commit is made, Build phase will be started and it builds an image.
+Once the .exe file is generated from the Build phase, the release phase starts.
+After release phase, we have multiple options to push the code to.
+The options are:
+Server, Containers, Pods
+All the above process can be configured in Azure Devops
+In Azure Devops, 
+For Build - We have build tools
+For release - We have Release tools
+For hosting - We have all Servers, Containers, Pods in Azure.
+So, using Azure Devops makes a sensible option since it has all the required resources in one place.
+We have Azure Repos to manage the code
+We need a tool to store the all the releases, which is artifacts
+Security
+JIRA similar tool -> Work items
+We have Bicep -> Azure tool for IAC
+For CI/CD, we will be using Github Actions.
+Azure test plans - Alternative for Selenium
+We already have Azure pipelines, but still we will be using the Github actions and push the code to the server by adding pipelines since that is trending in the recent times
+
+
+Devops includes the below topics:
+Operating system - Linux
+Cloud Services - Azure
+Repository management - Github, azure repos
+IAC - terraform, Bicep
+PAC - Pipeline as code - Azure pipelines
+Continuous Integration deployment
+Orchestration - Kubernestes
+Containerization - Docker
+Configuration - Terraform
+
+Complete AZ-104, AI-900
+
+In this course, we will also cover Azure monitor, Application insights, Prometheus, ELK, Grafana
+
+
+
+AI Topics
+

@@ -1,0 +1,34 @@
+Virtual server run upon Physical Server(PowerEdge R 630 Server)
+These days, all the virtual servers are horizontal in shape
+
+Combining two Vertical racks is called Availability Set.
+Types of Redundancies
+Fault Domains - Racks are called Fault Domains. each rack is called one fault domain. This is having servers in the same Physical server. Placed vertically in the same Physical server. For example, Fault Domain0, Fault Domain1
+Update Domains - Having one each server in each Physical server and placed in multiple Physical servers. So that, when update happens horizontally in racks, our workload doesnt effect.
+Availability zone - Indirectly a Data center. We wil be having 3 data centers in the same bangalore. One in Hebbal, One in JP Nagar, One in Rajaji Nagar.
+Distance between Availability zones will be approximately 100 kms. These 3 data centers will be connected with Dedicated high speed fiber connections will be running.
+With respect to Payment, Hosting 3 VMs in 3 Zones will cost 3 times the VM cost and data transfer charges between these 3 Data centers
+All together of 3 Data centers will be termed as Regions
+Bangalore is considered as one region with 3 Availability zones
+Chennai is considered as one region with 3 Availability zones
+
+Having Region pair setup means Disaster recovery setup(DR Setup). Linking two regions which are approx 475 kms or 300 miles apart to get help from each other region incase of emergency.
+SQL Databases, App services, Storage account, Recovery Service Vault.
+Azure has 60+ Regions worldwide. It means, 60 multiply by 3 approx 180 Availability zones.
+Benefits of region pairs
+Ensures data residency and compliance. GDPR - UK's documents should be saved only in UK Location. China's documents should be saved in China only, this is called Data residency. Dat should be encrypted to follow compliance practices.
+Updates are rolled out sequentially to minimize downtime.
+
+Steps to create an Azure Account
+
+
+
+
+
+
+
+
+
+Questions
+Does DR means, having only one recovery Region or Multiple ?
+Slide 42 - Oka Primary daniki inkoti Secondary. Inko primary ki inko secondary?

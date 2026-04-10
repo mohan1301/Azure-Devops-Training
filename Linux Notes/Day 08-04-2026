@@ -1,0 +1,50 @@
+So far we have discussed
+
+Azure Global infra
+Virtual Network
+Virtual Machines
+Storage accounts
+Linux
+
+Azure Cloud and Azure DevOps are two different tools but can be connected with the help of accounts
+
+
+To raise a Build, we need to raise a Request to Microsoft. FOr the same, we need atleast 72 hrs. This is called Parallelism request.
+We need Git, VSCode
+
+
+
+https://dev.azure.com/mohanorg0077/
+TO raise parallelism
+
+Git is a tool that will be installed on laptop
+It is a version control
+
+Github is a cloud that stores all the code
+
+
+
+
+
+
+
+Git
+
+Working directory
+git init will initialize a New Git repo in local
+
+git add .
+
+Staging area
+When you thought to push the files to staging area
+
+Local repository
+All committed changes will be pushed to Local Repository
+
+Remote repository
+Cloud files
+
+
+Working directory -> Staging area => git add .
+Staging area -> Local repository => git commit -m "initial commit"
+Local repository -> Remote repository => git push

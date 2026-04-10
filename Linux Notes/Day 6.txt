@@ -1,0 +1,74 @@
+Day 6 - 09-03-2026
+
+Today's topic:
+ASG --> Application Security Group
+Bastion Host
+Vnet peering
+
+Application Security Group
+Generally, all the subnets in a VNET can be accessed directly. Now, If with respect to an application, only 3 subnets are part of that application.
+By providing an application security group, only these 3 subnets will be able to communicate.
+
+Scenario
+1 Web Subnet with 2 Application servers with one of those machine will have Public IP
+1 DB Subnet with 1 Database Server
+App Server should be able to connect Database Server
+
+
+
+Steps
+Create an ASG
+Add VMs to the ASG
+
+
+Rules will be written at Destination Server
+In Inbound Security rules, 
+Source dropdown will have Application Security Group. So that, all the SSH's from this ASG will be accepted.
+
+
+Source should be either Jump server or 
+
+Note:
+Only 2 users can be logged in Windows Jump server at a time. Whereas, for Linux Jump server... N number of users can connect at a time.
+To overcome the limit of users to login at a time, Bastion Host concept is introduced.
+Bastion Host is used to help users to securely login with Virtual Machines.
+Bastion Host is a Managed service by Azure.
+By using this feature, we can skip the step of connecting Virtual machines via Jump server. With this feature, we can access the machines directly from portal using HTTPS(443). We can also access using RDP once the tunnel is setup.
+Bastion Host will have one Public IP and we can skip the step of creating Public IP for one Virtual machine.
+Bastion Host is not VM, Service. It is Paas service
+1 Bastion Host can connect 50 users/employees at a time. This is recommendation from Azure.
+Bastion Host will be requiring a Specific Subnet in the same VNET.
+
+Steps to setup Bastion:
+Create a Subnet for Bastion with Subnet Purpose - Azure Bastion
+Click Bastion on your left panel, Configure the Bastion manually
+
+VNet Peering
+Making a connection to let Two Vnet communicated is called VNET Peering
+At Vnet level, create Vnet peering
+Since we have VNet peering enabled, one bastion host is enought to connect
+
+
+
+
+Limitations of Bastion Host:
+Only using RDP, we can use Bastion Host
+
+Doubts:
+1. With respect to Compliance, Isnt having a Public IP in the VNet a risk for other servers hosted on the subnets of the same VNET?
+2. Connection between VPN and Jump server is not clear
+3. If Bastion Host is created and logged in with 50 users. 50 var files will be created ??? Bastion Host is a Paas service. enable connection between browser 
+4. Public IPv4 vs IPv6 - What is the difference ?
+5. Any zonal redundancy for Bastion Host?
+6. Within the subnet, precedence of ASG, NSG ?
+7. Difference between NSG and ASG ?
+8. What is the difference between Normal server and Jump server ?
+
+
+
+2. Connection between VPN and Jump server is not clear
+Answer
+We are connecting to VPN using a Public IP. So, eliminating the Public IP is possible for connecting to machines in the subnet.
+3. If Bastion Host is created and logged in with 50 users. 50 var files will be created ???
+Answer
+Bastion Host is a Paas service(Managed Service by Azure). Enable connection between browser.
