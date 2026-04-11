@@ -2,6 +2,7 @@ Date: 09-04-2026
 Agenda for today
 Push Local repo to Remote Repo in Git
 
+4 Stages
 Working directory
 Staging area
 Local repo

@@ -1,6 +1,14 @@
+Date: 10-04-2026
+Agenda for today
+
+4 Stages
+Working directory
+Staging area
+Local repo
+Remote repo
+
 git reset --soft HEAD --> This will move the HEAD commit to staging and HEAD will move to previous commit
 Local repo to Staging location
-
 
 git reset --> This will move the commits to working directory
 
