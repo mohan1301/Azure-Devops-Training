@@ -39,7 +39,7 @@ git branch -> This will show all the branches in local
 
 git switch sales --> Switch the branch to sales
 
-mixed flag is something like 
+mixed flag uses are:
 --soft -> Will go one commit back to staging
 --hard -> Will go one commit back to staging and discard the changes
 --mixed ->Will go one commit back directly to working directly from local to working directory.
