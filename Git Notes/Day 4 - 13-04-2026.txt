@@ -1,0 +1,52 @@
+Date: 10-04-2026
+Agenda for today
+Cherry pick
+Stash
+.gitignore
+
+Cherry pick
+Use case 1
+A hotfix branch is created to fix a bug and commit multiple changes. Now the requirement is, we wanted to merge the branch code to main. But, we only need few commits into main branch. This is called cherry pick.
+Analogy is something like, we will only pick very few commits from a lot of commits in feature/hotfix branch.
+
+Use case 2
+We have multiple branches for multiple use cases like urban company branch, saloon branch, groceries branch. Each branch has multiple commits.
+Now, a specific feature in saloon branch needs to be implemented in another groceries branch. Then this is called Cherry pick concept
+Command: 
+git switch main
+git cherry-pick <commitid>
+
+
+Stashing concept
+If we are working on 4 files in a feature branch and these are already in stashing stage, now we want to place them aside by using squash concept
+And now, we have to start another work and once the second work is completed, then we can get the files which are kept aside from stashing location
+pop - Bring back the changes
+drop - Discard the changes permanently.
+Commands:
+git stash
+git stash pop
+
+
+git cherry-pick 51eefba - This will pick and merge the ode to main
+git cherry-pick 51eefba c516d48 - For cherry-oicking
+
+
+git stash push -m "Working on login module"
+git stash list - Newest commit will always will come to stash@{0}
+stash@{0}: On hot-fix: Working on login module
+stash@{1}: On hot-fix: Working on payments module
+
+git stash list
+
+git stash pop "stash@{1}"
+
+git stash push -m "new login feature" - Stashing changes with a specific message
+
+How to get a specific file using stash - git restore -s "stash@{0}" -- login5.txt
+
+git stash is useful to manage all the uncommit changes. Commands like pop, drop will help to manage
+
+
+
+In order to ignore few file types, we use .gitignore file
+*.log
