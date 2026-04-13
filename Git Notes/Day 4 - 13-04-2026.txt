@@ -28,8 +28,7 @@ git stash pop
 
 
 git cherry-pick 51eefba - This will pick and merge the ode to main
-git cherry-pick 51eefba c516d48 - For cherry-oicking
-
+git cherry-pick 51eefba c516d48 - For cherry-picking multiple files at a time
 
 git stash push -m "Working on login module"
 git stash list - Newest commit will always will come to stash@{0}
