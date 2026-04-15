@@ -1,0 +1,16 @@
+Date: 14-04-2026
+Agenda for today
+Branching in remote repo and merging strategies
+
+Azure DevOps --> Project creation(UrbanCompany)
+
+Repos - Urban company Dev, Urban company Prd
+
+
+Discussed about the concepts of Compare, Behind, Ahead
+
+There are 4 merging strategies
+1. Merge No Fast Forward(Non Linear PR Strategy) - Preserving Full commit history(Non Linear). Merge bubble will be shown - Enterprise level
+2. Squash(Linear PR Strategy) - Combines all the commits into one commit - Used in Messy commits situation
+3. Rebase+FastForward - Linear and No merge commit, No branch traces and it looks like continuous commits - Used in Single developer/Simple changes
+4. Semi Linear Merge(Rebase+ No FastForward) - Non Linear - Hybrid + PR traces
