@@ -1,0 +1,13 @@
+Date: 15-04-2026
+Agenda for today
+
+Fork and Merge conflicts
+
+Situations for Merge conflicts may happen:
+
+
+
+Action items
+Should practice Merging strategies
+Merge conflicts
+Get Chatgpt Merge conflicts
