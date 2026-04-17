@@ -2,8 +2,7 @@ Date: 15-04-2026
 Agenda for today
 
 Fork and Merge conflicts
-
-Situations for Merge conflicts may happen:
+We can accept the Incoming changes, Current changes, Combination of both the changes
 
 
 
