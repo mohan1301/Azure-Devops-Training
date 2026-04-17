@@ -12,8 +12,6 @@ testing
 QA
 UAT
 
-
 Branch Policies can be applied at Branch level
 Branch Security can be applied at Branch level
 Lock can be applied at branch level. So, all the changes to this branch can be fetched only by a pull request.
-

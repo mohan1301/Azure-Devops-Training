@@ -5,7 +5,6 @@ Fork and Merge conflicts
 We can accept the Incoming changes, Current changes, Combination of both the changes
 
 
-
 Action items
 Should practice Merging strategies
 Merge conflicts
