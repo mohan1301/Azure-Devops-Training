@@ -10,7 +10,7 @@ resource "azurerm_storage_account" "sa" {
   account_replication_type = "LRS"
   account_tier             = "Standard"
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes  = [tags]
   }
 }
@@ -98,7 +98,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     # ignore_changes  = [size]
   }
 }
