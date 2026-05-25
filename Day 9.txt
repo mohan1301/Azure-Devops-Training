@@ -1,0 +1,63 @@
+Day 9 - 13-03-2026
+
+Today's topic: Storage as a service
+
+Types of storage:
+Blob storage
+File storage
+Tables
+Queues
+
+For example, Hospital data
+Hospital
+Insurance company
+Doctor
+CT Scan report ->All the data will be stored in Blob storage as this will have unstructured data.
+
+
+BLOB -> MRI(Container) -> Unstructured data
+File storage -> All the files related to a patient will be mounted
+Tables -> To retrieve data fastly. NoSql structured data in tables.
+Queues -> Hospital will form a queue between Hospital and Insurance company. Where all the data will be logged in the queue.
+
+Kinds of Storage types:
+Hard disk
+Standard SSD
+Premium SSD
+
+Speed of retrieval is calculated in two parameters - IOPS, Latency
+IOPS - Input Output per second
+Latency - How fast the data can be retrieved. The response time should be low.
+
+Reliable
+Backup
+Pay as you go model
+Share the data across multiple teams and applications
+
+Since we are just using the Storage, and the infra is being managed by azure. we called this a PAAS Service.
+
+
+Redundancy storage types
+LRS -> Local Redundancy Storage -> Creates 3 copies in the same zone
+ZRS -> Zone Redundancy Storage -> Creates 1 copy for each zone in the same Region
+GRS -> Geo Redundancy Storage -> Creates copies in different Geo graphical regions. 3 copies in Primary zone in one region and another 3 copies in Secondary region in one zone.
+GZRS -> Geo Zone Redundancy Storage. In primary, backup files will be in all three zones but in same region with synchronous. But, In secondary zone, backup files will be in a single region, single zone and in asynchronous.
+
+Synchronous -> All the changes made in machines of LRS, ZRS will be in sync. And changes made in one Region of GRS will be in sync but all the changes made will be transferred to another region will be in asynchronous mode.
+Asynchronous -> All the changes are replicated in the form of batches.
+
+
+Browse button is using REST API
+
+Practice VM Creation
+Availability zone
+Availability Set
+VM Scale Set
+Storage account
+
+
+Documents- Will be shared
+
+Lets do a Project in future on the below topics
+VM, SS, SA, DB Server(MySql server), Linux
+Blob cannot be able to mount. But, File storages can be mounted to Linux machines.

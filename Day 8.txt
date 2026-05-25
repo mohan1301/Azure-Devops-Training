@@ -1,0 +1,71 @@
+Should watch this class's recording to get more clarity
+
+Today's topic:
+Availability Set and its settings
+Scale Set and its settings
+
+Rack - Set of Virtual machines
+
+Instead of keeping all virtual machines in a single rack, we instead host them in multiple other different racks.
+While doing periodic maintenance, Microsoft considers upgrading all the machines in the horizontal sequence. So, if Microsoft gets a downtime, it is a problem. So, Microsoft doesnt place them in same rack, same update domain(Horizontal rack). It will place the machines in different update domains, different racks(Fault domain).
+
+Horizontal rack - Update domain
+Vertical rack - Fault domain
+
+Availability zone - Having machines in different zones.
+Availability set - Ensures multiple vms are distributed different physical hardware. So, maintenance doesnt effect the uptime of VMs.
+
+How many Fault Domains and Update domains can be created ?
+Answer: 20 Update domains can be created, 3 fault domains can be created by Azure
+
+We will have three types of Availability options: Availability Zone, Scale set, Availability Set
+Availability Set is a logical placement of Virtual servers so that under maintenance the machines are not effected
+
+Scale sets: If we observe any set of machines are being stressed, we can extend the number of servers to distribute the load evenly
+We have two types of Scaling
+Vertical Scaling and Horizontal Scaling
+Vertical Scaling -> Having the same infra but increasing the specifications. We can just turn off the machine, Increase the specs, start again to experience the Vertical Scaling.
+Horizontal Scaling -> Increase the number of machines hosted when certain conditions are met. With the help of Golden image, VMs will be created.
+
+To connect to a public IP
+CMD in Start button
+ssh devopsuser@40.85.254.50
+You'll be logged into the machine
+apt install apache-2 y
+cd /var/www/html
+You'll find index.html
+%d for deleting everthing
+Paste the html code we have
+systemctl restart apache2 - To restart the machine
+Now, open the port 80 to access network.
+
+Using a command, we can create Golden image
+Azure provides one agent which can remove all the 
+waagent -deprovision+user
+With this -> user will be deleted which we get from Golden image
+Public Ip settings - Will be removed and factory settings will be enabled
+
+/etc/resolv.conf will have all the settings of the user
+
+Shut down the VM
+Capture the VM -> from this, create an image
+
+Sequence of Image creation -> Create Compute Gallery name -> Create image definition -> Create Image version
+---------------------------------------------------
+Revision of todays class
+Create VM
+Configured the VM
+	Apache install and hosted webpage
+Create a Image out of it
+
+Create Scale Set
+	Choose the image
+	Min, max, default servers
+	When spiked, how many servers to be created
+	Create load balancer with Auto Options
+---------------------------------------------------
+Creating a VM Scale Set means It acts as you are creating Virtual machine across zones and creating scale set
+
+
+
+Pricing Calculator
