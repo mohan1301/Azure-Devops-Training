@@ -1,0 +1,89 @@
+Physical Layer - CPU, RAM, HDD, NIC, Mother Board, IO Devices
+Interface -> Kernel - Layer for OS(Brain in entire OS) - We can conclude Kernel as a Librarian who manages.
+Operating System -> Pre defined apps | User defined Apps
+Drivers -> A mediator between Kernel and Physical Hardware
+
+
+Human
+
+
+Kernel will make sure it allocates required resources from Physical Layer
+Kernel looks after CPU Scheduling, Memory Management, File system, Security and permission.
+
+We have two different Operating systems.
+1. Server Operating system - Linux is preferred more in general
+Example,
+Windows Server OS - 2016,2019,2022,2025
+Linux Server OS - Redhat, Ubuntu, Suse, Fedora, Kali, Debian - All these are made from the base Linux OS
+2. Desktop Operating system - Windows is preferred more in general
+Windows Desktop Server - Windows 10, 11
+Linux Desktop Server - 
+
+Appliance - It only works for single task
+
+Benefits of Linux
+Open source -> full control
+Light weight and efficient
+Security model
+Highly customizable
+Automation and Devops -> Used in Docker
+Kubernetes, Terraform
+Stability and Uptime
+Upgrades, updates and Install are easier in Linux
+
+
+Today's class work:
+Access Linux VM using SSH Keys, Certificates, Secrets
+SSH Keys -> Public Key, Private key
+We will have Private Key and Server will have Public Key
+
+
+In Linux
+User and Group management
+File permissions
+Editors -> vi, vm are the editors in Linux for scripts
+Package management
+Shell scripting
+Cron Job(Schedulers)
+SSH Keys
+
+
+Lets test in local machine
+While creating VM
+Username: azureuser
+SSH public key source: Generate new key pair
+SSH Key Type: RSA SSH Format
+Key pair name: devopsuser
+
+
+We can access VM from command prompt in Windows
+Till now, we connect by ssh devops@IP Address
+Now, the process changed. Here are the steps below:
+Go to the location where pem file is present.
+Command to connect to a machine using private key.
+Run the command with "ssh -i .\devopsuser.pem devopsuser @20.220.165.235"
+Same command for Linux and Windows
+
+
+Putty is used to Connect
+Putty keygen - Puttygen application needs to be downloaded.
+Putty will not accept pem file. So, We have to convert the pem to ppk file to let Putty connect.
+
+How to use PuTTY?puttygen.exe
+Once the Port number and Host name is given, everything will be fine.
+In putty, Connection, session...
+
+
+We can place our keys in .ssh/ folder to automatically login to the machines.
+
+Private keys are related to User based. Each user will get one Private Key.
+10 Users will get 10 different private keys
+
+All the keys will be stored by Azure in this location - /home/devopsuser/.ssh/authorized_keys
+
+
+
+Doubts:
+What is Serial Host, Serial Port?
+pem and ppk ? both are private keys but different format. In putty, ppk is used.
+

@@ -1,0 +1,27 @@
+Day 10 - 16-03-2026
+
+Today topic:
+Blob storage
+
+Types of Blobs:
+Block Blob - 
+Append Blob - Only for the append operations
+Page Blob - Random read operations - For saving virtual machine headware
+
+
+Static website
+
+Lifecycle management
+
+Cool storage
+Cold storage
+Archive storage
+
+If any file in cold storage is touched, it will not automatically move from Cold to Hot. We have to manually move the file from Cold to Hot in case needed.
+
+Process of getting back the file from Archive to Hot is called Rehydrate
+Filters to apply on what all files the conditions needs to meet
+
+
+Doubts:
+What is the diff between point-in-time vs SOft delete in Storage account creation?

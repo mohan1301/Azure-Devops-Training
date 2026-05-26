@@ -1,0 +1,50 @@
+Older approach - File Server
+In general, every employee will have one Z Drive which is mounted on File server
+Developers will store their files in File shares which will be mounted on File server
+Mount by address - 10.0.0.5
+
+Newer Approach - Cloud File share
+Min 100 GB to 100 TB is the limit of the File share
+Mounted by url address - sbia019.file.windows.net
+
+SMB - Server Message Block Protocol--> Windows/Linux/MAC
+NFS - Network File Share Protocol--> Linux
+
+
+To get a private network to connect to the Storage account, we create private endpoints(NIC Cards for the Azure Service)
+Storage account is a Paas service since you cannot manage the Hardware of it.
+To securely access the Storage account, we create a NIC Card. Inside the Storage account, we create NFS for Linux machine, SMB for Windows. With this WIndows VM can access the Storage account securely and Linux VM can access the Storage account.
+
+Settings in Storage account/File share
+No Root squash - If you are root, you are having root access(root access is retained) over the mounted NFS Drives. You can delete the satya files if though you are Ravi(root person) - NON CRITICAL DATA
+Root squash - Root is also mapped as anonymous user. Cannot delete Satya's file. You are Ravi - MEDIUM CRITICAL DATA.
+All Squash - All users are mapped as anonymous users. Highly recommended for Secure Infra. So, even though you are root, you will not have access over others resources, in case access is needed, you need to request - FULL CRITICAL DATA
+
+NFS doesnt support backup.
+
+Blob storage - Something like Google drive
+File share - Mounting on a server
+
+Create RG
+VNET
+Subnet
+Storage account
+Create File Shares under Data Controls section
+NFS
+SMB
+
+
+We have to connect this NFS Share to Linux machine every single time it is created
+
+In CMD, mstsc - To open RDP Application to connect Windows machine
+
+We can restrict who can access for SMB using the Networking section(Add a subnet/IP Address)
+
+CONNECTION BETWEEN TWO APP SERVICES - WE CREATE SERVICE ENDPOINTS
+
+Doubts:
+Private endpoint, Service Endpoint, On premise are three options to connect to a Storage account for NIC Card. Explain these 3 options.
+Do we have to mount manually every single time ?
+
+Task:
+You should be able to see the index.html in both linux vm and windows vm with File share enabled
