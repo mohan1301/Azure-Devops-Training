@@ -1,0 +1,6 @@
+resource_group_name = "ucrg"
+location = "eastus"
+storage_account_name = "ucrgsa"
+vm_name = "ucvm"
+admin_username = "azureuser"
+admin_password = "P@ssw0rd123"
