@@ -1,0 +1,18 @@
+Touch Command:
+This is generally used for creating the files. But, this can also be used for setting the access, time the file is created.
+Update only access time (atime): touch -a filename.txt
+Update only modification time (mtime): touch -m filename.txt
+Set a specific date and time, The format is [[CC]YY]MMDDhhmm[.ss]: touch -t 202605311230.30 filename.txt
+Use a reference file: Updates filename.txt to match the timestamps of reference.txt : touch -r reference.txt filename.txt
+Don't create the file if it's missing: Only updates the timestamp if the file already exists : touch -c filename.txt
+
+cd - ==> This command is used for change to the last visited path
+cd . ==> Changes your directory to the exact folder you are already in, which essentially does nothing and acts as a safe "refresh."
+cd .. ==> change to the directory above your current i.e parent directory
+cd    ==> change to your home directory
+cd ~ ===> change to your home directory
+cd / ===> change to the root directory
+
+The -r (or -R in some commands) flag allows the user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (ls -R)
+To list all the files, one can run ls -R /dir1
+
