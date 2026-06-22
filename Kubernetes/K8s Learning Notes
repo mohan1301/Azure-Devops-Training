@@ -1,0 +1,29 @@
+kubectl - Command line tool
+
+kind -  kind full form is Kubernetes IN Docker
+kind runs Kubernetes Clusters using Docker containers as nodes.
+Kind is specifically designed for testing Kubernetes itself
+
+minikube - this runs a single node Kubernetes cluster on your local machine. This supports multiple container runtimes
+
+There are several third party tools available to run Kubernetes clusters on your local machine. Some of the popular ones are:
+1. Docker Desktop - This is a GUI based tool which can be used to run Kubernetes cluster on your local machine. This is available for Windows and Mac OS. This is not available for Linux.
+2. Podman Desktop
+3. MicroK8s - This is a lightweight Kubernetes distribution developed by Canonical, the company behind Ubuntu. It is designed for local development and testing, and can be installed on Linux, Windows, and Mac OS.
+
+Kubernetes can be run in many different ways:
+1. Serverless Kubernetes - In this, we dont have to worry about the underlying infrastructure. We can just focus on our application and let the cloud provider manage the Kubernetes cluster for us. Examples of serverless Kubernetes are AKS, EKS, GKE. You will be charged for things like CPU usage, memory usage, storage usage, and network usage.
+2. Managed Control Plane - Let the provider manage the scale and availalbility of the cluster's control plane, as well as handle patches and upgrades.
+3. Managed worker nodes - Configure pools of nodes to meet your needs, then the provider makes sure those nodes are available and ready to implement upgrades when needed
+4. Integration - There are providers that integrate Kubernetes with their services, such as databases, monitoring, and logging. This can make it easier to manage your applications and infrastructure.
+5. Self-managed Kubernetes
+6. On-premises Kubernetes
+7. Hybrid Kubernetes
+8. Multi-cloud Kubernetes
+9. Edge Kubernetes
+10. Kubernetes as a Service (KaaS)
+11. Kubernetes on Bare Metal
+12. Kubernetes on Virtual Machines
+
+Certificates are created for secure communication between the components of the Kubernetes cluster. These certificates are used to authenticate and encrypt the communication between the components, such as the API server, kubelet, and etcd. The certificates are typically created using a certificate authority (CA) and are signed by the CA to ensure their authenticity. The certificates are also used to establish trust between the components and to prevent unauthorized access to the cluster.
+
